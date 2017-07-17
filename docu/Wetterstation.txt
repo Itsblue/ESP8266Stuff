@@ -1,3 +1,7 @@
 Was soll das denn sein?
 
 ... das wird mal eine Wetterstation für Temperatur, Luftdruck, Luftfeuchte und Wireless Modul als Interface zum Endgerät wie z.B. ein Handy.
+
+
+
+--- hier kommt mal die ausführliche Doku.
