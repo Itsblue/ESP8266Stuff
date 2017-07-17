@@ -1,4 +1,4 @@
-Was soll das denn sein?
+Was soll das denn hier sein?
 
 ... das wird mal eine Wetterstation für Temperatur, Luftdruck, Luftfeuchte und Wireless Modul als Interface zum Endgerät wie z.B. ein Handy.
 
