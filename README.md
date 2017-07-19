@@ -1,6 +1,11 @@
 # Wetterstation
 
-Here we will post all our ESP8266 Projects!
+
+
+Schematic:
+https://easyeda.com/Scharnwebers/Wetterstation-4dc0aaff50a5405a96b38a3c4fdd7628
+
+
 The URL of the repository is https://github.com/Itsblue/ESP8266Stuff.git
 This is what you need to clone the data to your local drive e.g. with the desktop app of GitHub or with the command line interface of GitHub.
 
