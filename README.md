@@ -9,8 +9,8 @@ https://easyeda.com/Scharnwebers/Wetterstation-4dc0aaff50a5405a96b38a3c4fdd7628
 
 Used libraries:
 
-AM2302/DHT22: https://github.com/adafruit/DHT-sensor-library
-BMP180: https://github.com/adafruit/Adafruit-BMP085-Library
+-AM2302/DHT22: https://github.com/adafruit/DHT-sensor-library
+-BMP180: https://github.com/adafruit/Adafruit-BMP085-Library
 
 
 The URL of the repository is https://github.com/Itsblue/ESP8266Stuff.git
