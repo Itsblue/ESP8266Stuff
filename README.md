@@ -21,9 +21,10 @@ Easiest way to clone the repo is to do clock on the "clone or download" button i
 HowTo clone the repository on a terminal is described here: https://help.github.com/articles/fork-a-repo/
 
 Source AM2302 code:
-
 http://hpclab.blogspot.de/2015/06/esp8266-based-wifi-weather-monitoring.html
 
 Source BMP180:
-
 http://www.instructables.com/id/Adding-the-BMP180-to-the-ESP8266/
+
+Source ESP8266 Webserver:
+https://blog.thesen.eu/http-1-1-webserver-fuer-esp8266-als-accesspoint/
