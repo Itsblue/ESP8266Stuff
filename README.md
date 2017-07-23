@@ -9,6 +9,8 @@ https://easyeda.com/Scharnwebers/Wetterstation-4dc0aaff50a5405a96b38a3c4fdd7628
 
 Used libraries:
 
+
+-OLED Display: https://github.com/squix78/esp8266-oled-ssd1306
 -AM2302/DHT22: https://github.com/adafruit/DHT-sensor-library
 -BMP180: https://github.com/adafruit/Adafruit-BMP085-Library
 
