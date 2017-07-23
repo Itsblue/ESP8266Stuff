@@ -1,39 +1,18 @@
-/*
+
+
 #include <ESP8266WiFi.h>
 #include "DHT.h"
 
-#define DHTPIN 2     // what pin we're connected to
+#define DHTPIN 14     // what pin we're connected to
 #define DHTTYPE DHT22   // DHT 22  (AM2302)
 
-DHT dht(DHTPIN, DHTTYPE, 30); // 30 is for cpu clock of ESP8266 80Mhz
-
-void setup() {
-  Serial.begin(9600);
-  dht.begin();
-  delay(10);
-}
-
-void loop() {
-
-
-  // Reading temperature or humidity takes about 250 milliseconds!
-  // Sensor readings may also be up to 2 seconds 'old' (its a very slow sensor)
-  float h = dht.readHumidity();
-  // Read temperature as Celsius
-  float t = dht.readTemperature();
-   // Read temperature as Fahrenheit
-  //float t = dht.readTemperature(true);
-
-  
-
-}
-*/
-
-
-#include <ESP8266WiFi.h>
+DHT dht(DHTPIN, DHTTYPE); // 30 is for cpu clock of ESP8266 80Mhz
 
 const char* ssid     = "ESP8266AP"; //Auenland 2,4GHz
 const char* password = "";//61211591054673063607
+
+float h;
+float t;
 
 unsigned long ulReqcount;
 unsigned long ulReconncount;
@@ -51,6 +30,10 @@ void setup() {
   // prepare GPIO2
   pinMode(2, OUTPUT);
   digitalWrite(2, 0);
+
+  //initialize AM2302
+  dht.begin();
+  delay(10);
   
   // start serial
   Serial.begin(9600);
@@ -60,6 +43,15 @@ void setup() {
   WiFi.mode(WIFI_AP);
   WiFi.softAP(ssid, password);
   server.begin();
+
+  // Reading temperature or humidity takes about 250 milliseconds!
+        // Sensor readings may also be up to 2 seconds 'old' (its a very slow sensor)
+        float h = dht.readHumidity();
+        // Read temperature as Celsius
+        float t = dht.readTemperature();
+        // Read temperature as Fahrenheit
+        //float t = dht.readTemperature(true);
+  
 }
 
 
@@ -186,7 +178,10 @@ void loop() {
     sResponse += "<h1>Portable weatherstation</h1>";
     sResponse += "here you can see the data provided by the Sensors.<BR>";
     sResponse += "<BR>AM2302:";
-    sResponse += 
+    sResponse += "<BR>Themperature= ";
+    sResponse += t;
+    sResponse += "<BR>Humidity= ";
+    sResponse += h;
     sResponse += "<FONT SIZE=+1>";
     sResponse += "<p><a href=\"?pin=REFRESH\"><button>refresh</button></a>&nbsp;";
     
@@ -203,7 +198,21 @@ void loop() {
          /*
           * CODE
           */
-        
+          
+        // Reading temperature or humidity takes about 250 milliseconds!
+        // Sensor readings may also be up to 2 seconds 'old' (its a very slow sensor)
+        h = dht.readHumidity();
+        // Read temperature as Celsius
+        t = dht.readTemperature();
+        // Read temperature as Fahrenheit
+        //float t = dht.readTemperature(true);
+
+        Serial.print("Humidity=");
+        Serial.println(h);
+
+        Serial.print("Theperature=");
+        Serial.println(t);
+        delay(1000);
       }
     }
     
