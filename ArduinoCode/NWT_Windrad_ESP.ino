@@ -7,8 +7,8 @@
 
 
 const int reed = 13;           // reed-contact is attached to GPIO13.
-const char* ssid     = "Auenland 2,4GHz";
-const char* password = "61211591054673063607";
+const char* ssid     = "YOUR SSID HERE";
+const char* password = "YOUR PASSWORD HERE";
 
 int progress = 0;
 int wifitimeout = 0;
