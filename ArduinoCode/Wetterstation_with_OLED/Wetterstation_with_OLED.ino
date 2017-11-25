@@ -8,11 +8,11 @@
 #include "Wetterstation_with_OLED.h"
 
 // function declaration ...
-static void readTempHum( int , /*out*/ float*, /*out*/ float*, /*out*/ float*);
-static void writeTempHum(/*in*/ float , /*in*/ float , /*in*/ float ,/*in*/ String);
-static void sendHTMLResponse( /*in*/ String path,/*in*/ float [],/*in*/ float [],/*in*/ const String [], /*in*/ WiFiClient client);
-static void getClientRequest( /*out*/ bool* active, /*out*/ String* cmd, /*out*/ String* path, /*out*/ WiFiClient* client);
-static void execCmds ( /*in*/ String sCmd );
+void readTempHum( int , /*out*/ float*, /*out*/ float*, /*out*/ float*);
+void writeTempHum(/*in*/ float , /*in*/ float , /*in*/ float ,/*in*/ String);
+void sendHTMLResponse( /*in*/ String path,/*in*/ float [],/*in*/ float [],/*in*/ const String [], /*in*/ WiFiClient client);
+void getClientRequest( /*out*/ bool* active, /*out*/ String* cmd, /*out*/ String* path, /*out*/ WiFiClient* client);
+void execCmds ( /*in*/ String sCmd );
 
 // internal defines for the temperature/humidity sensors ... do not change if hardware is the same ...
 #define DHTTYPE DHT22                         // DHT22 is our temperatur and humidity sensor (AM2302)
@@ -41,7 +41,7 @@ SSD1306  display(DISPADDR, DISPSDA, DISPSCI); //initialize display for sda and s
 
 // Create an instance of the server / wifi module
 WiFiServer server(SERVER_PORT);     
-WiFiClient client;        
+WiFiClient client;
 
 
 // global variables ...
