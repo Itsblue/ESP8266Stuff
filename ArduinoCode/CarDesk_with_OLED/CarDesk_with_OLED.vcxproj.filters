@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Wetterstation_with_OLED.ino" />
+    <None Include="CarDesk_with_OLED.ino" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="__vm\.Wetterstation_with_OLED.vsarduino.h">
@@ -24,7 +24,16 @@
     <ClInclude Include="fonts.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Wetterstation_with_OLED.h">
+    <ClInclude Include="__vm\.CarDesk_with_OLED.vsarduino.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CarDesk_with_OLED.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="images.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pitch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

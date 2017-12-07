@@ -1,9 +1,11 @@
-
+#include <TimeLib.h>
+#include <DS1307RTC.h>
 #include <vector>
 #include "SSD1306.h"                          // this is the OLED display library
 #ifndef FONT_LIB_V3
 #include "fonts.h"                            // fonts library to support the display output
 #endif
+
 
 #include "images.h"
 #include <ESP8266WiFi.h>                      // nodemcu wifi module support 
@@ -11,6 +13,7 @@
 #include "CarDesk_with_OLED.h"
 #include "pitch.h"
 #include <JN_Graph.h>
+#include "Time.h"
 
 #define membersof(x) (sizeof(x) / sizeof(x[0]))
 
@@ -21,7 +24,7 @@
 // number of maximum temperatur values that will be stored
 #define STORED_VALS 108
 #define STORED_ALL_INFO STORED_FIRST+STORED_VALS
-#define STORE_INTERVAL_IN_MS 60*MIN_WAIT_TIME_MS     //number of milliseconds OR wait cycles to wait before storing the measured values
+#define STORE_INTERVAL_IN_MS 300*MIN_WAIT_TIME_MS     //number of milliseconds OR wait cycles to wait before storing the measured values
 
 // array to do an auto scale of the x axes in the diagram ... define are the scaler, max value and the unit ... 
 String x_auto_legend[][3] = {{String(1000.0),"99.0","[s]"},{String(60.0*1000.0),"99.0","[min]"},{String(60.0*60.0*1000.0),"72.0","[h]"},{String(24.0*60.0*60.0*1000.0),"72.0","[d]"}};
@@ -280,6 +283,10 @@ void loop() {
 /*----------------------------------
  * ----------FUNCTIONS-------------
  -----------------------------------*/
+//void clock
+
+
+ 
 void motion_detection(motion_e* pirState, unsigned long* lastmotion){
   int val = digitalRead(PIR);  // read input value
   if (val == HIGH) {            // check if the input is HIGH
@@ -305,7 +312,6 @@ void set_weather_state( /* in */ float temp[][STORED_ALL_INFO],
                         /* in */ float hum[][STORED_ALL_INFO],
                         /* in */ float heat[][STORED_ALL_INFO],
                         /* bidi */ wstate* weather)
-
 {
 
   //this function set all the states of the weather we have - icy,wet,dry,day or night ... depending on the data we have
@@ -597,7 +603,7 @@ void playMusic() {
   // iterate over the notes of the melody:
   // notes in the melody:
   int melody[] = {
-    NOTE_C4, NOTE_G3, NOTE_G3, NOTE_A3, NOTE_G3, NOTE_B0, NOTE_B3, NOTE_C4
+    NOTE_C5, NOTE_G4, NOTE_G4, NOTE_A4, NOTE_G4, NOTE_B3, NOTE_B4, NOTE_C5
   };
 
   // note durations: 4 = quarter note, 8 = eighth note, etc.:

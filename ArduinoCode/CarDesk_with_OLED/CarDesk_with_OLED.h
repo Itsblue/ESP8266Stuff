@@ -7,6 +7,12 @@
 typedef enum {MOTION, NOMOTION} motion_e;
 #define MOTION_WAIT_BEFORE_SWITCH_MS 20000  //if a change has detected from motion to nomotion or the other way arround we will wait this amopunt of time befroe switch to the other state
 
+//--- for RTC timer
+const char *monthName[12] = {
+  "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+};
+
 //--- Buzzer
 #define BUZZER 15        // this is the output pin of the buzzer
 
