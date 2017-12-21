@@ -50,8 +50,9 @@ SSD1306  display(DISPADDR, DISPSDA, DISPSCI); //initialize display for sda and s
 #define Y_UPPER_AXES_START 15
 #define Y_LOWER_AXES_START 53
 #define MEAS_POINT_RADIUS 2
+#define Y_SCALE 2
 
-JN_Graph graph(STORED_VALS, STORED_FIRST, X_AXES_START, X_AXES_LENGTH, Y_UPPER_AXES_START, Y_LOWER_AXES_START, MEAS_POINT_RADIUS);
+JN_Graph graph(STORED_VALS, STORED_FIRST, X_AXES_START, X_AXES_LENGTH, Y_UPPER_AXES_START, Y_LOWER_AXES_START, MEAS_POINT_RADIUS, Y_SCALE);
 
 // internal defines for the serial monitor ...
 #define SERIAL_BAUDRATE 9600                  // serial monitor baudrate

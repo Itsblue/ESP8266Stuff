@@ -13,21 +13,31 @@ const char *monthName[12] = {
   "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
 };
 
+//-------------- defines fpr the radio devices NRF24 ---------------------------------------------------------
+
+//#define RADIO_SEL 4   // this 4 for Nano
+typedef enum {RADIO0 = 0, RADIO1} radio_type_e;      
+#define RF24_CNS D8    // this is 7 for the Nano, D4 for the ESP
+#define RF24_CE D4     // this is 8 for the ESP, D3 for the ESP
+
 //--- Buzzer
-#define BUZZER 15        // this is the output pin of the buzzer
+#define BUZZER D0        // this is the output pin of the buzzer
+
+//------------- Button -------------------------------------
+#define BUTTON D9
 
 //--- Options of the temprature/humidity sensors .... you can as many as connected via a GPIO to the list ... the code will include all of them -----------
-typedef enum {INNEN, AUSSEN, AUSSEN2} location_sensor;
+typedef enum {INNEN, AUSSEN} location_sensor;
 const String DISPLAY_TITLE[] = {                                   // titles to display at the OLED when the mesured values of the corresponding sensor is shown, just add more ... 
                                   [INNEN]  = "Innen",
-                                  [AUSSEN] = "Aussen",
-                                  [AUSSEN2]="Aussen2"
+                                  [AUSSEN] = "Aussen"
+                                  //[AUSSEN2]="Aussen2"
                                };
                                
 const int IN_DHTPIN[] = {
                           [INNEN]  = 2,
-                          [AUSSEN] = 0,
-                          [AUSSEN2]= 14
+                          [AUSSEN] = 0
+                          //[AUSSEN2]= 14
                         };                                       // GPIO of the nodemcu the temperature/humidity sensors are connected to
 
 typedef enum {DAY, NIGHT} dayornight_e;
